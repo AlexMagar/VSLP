@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="340.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LeftRightController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="550.0" layoutX="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/road_landscape1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="stone_big" fitHeight="54.0" fitWidth="51.0" layoutX="312.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/stone22.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="stone_mud" fitHeight="111.0" fitWidth="115.0" layoutX="171.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/stoneFull12.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="car" fitHeight="83.0" fitWidth="94.0" layoutX="330.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/car.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="stone_small" fitHeight="28.0" fitWidth="30.0" layoutX="265.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/stone21.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

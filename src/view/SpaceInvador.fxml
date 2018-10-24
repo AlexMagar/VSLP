@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="#">
+   <children>
+      <Rectangle fx:id="enemy1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="23.0" layoutX="54.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+      <Rectangle fx:id="enemy2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="23.0" layoutX="141.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+      <Rectangle fx:id="enemy3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="23.0" layoutX="241.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+      <Rectangle fx:id="enemy4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="23.0" layoutX="340.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+      <Rectangle fx:id="shoter" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="23.0" layoutX="187.0" layoutY="349.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+   </children>
+</AnchorPane>
+ 
