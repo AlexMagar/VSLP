@@ -35,7 +35,7 @@
                   <Image url="@../image/road.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgRBuilding" fitHeight="500.0" fitWidth="600.0" layoutX="494.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgRBuilding" fitHeight="500.0" fitWidth="600.0" layoutX="490.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/RBuilding.png" />
                </image>
@@ -60,7 +60,7 @@
                   <Image url="@../image/tree2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgTree3" fitHeight="150.0" fitWidth="200.0" layoutX="736.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTree3" fitHeight="150.0" fitWidth="200.0" layoutX="710.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/tree3.png" />
                </image>
