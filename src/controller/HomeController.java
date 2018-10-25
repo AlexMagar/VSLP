@@ -11,6 +11,7 @@ import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,6 +21,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -30,9 +34,12 @@ public class HomeController implements Initializable, ControlledScene {
 	SceneController myController;
 
     private int BACKGROUND_WIDTH = 1200;
+    private static double initial_man_pos = 228.0;
     private ParallelTransition parallelTransition;
     public TranslateTransition mountain1;
-    Main main;
+    
+    @FXML
+    private Pane rootPane;
     
     @FXML 
     private Button btnProfile;
@@ -97,11 +104,21 @@ public class HomeController implements Initializable, ControlledScene {
     @FXML
     private Label lblStatus;
     
+    @FXML
+    private ImageView man;
+    
+
+	@Override
+	public void setSceneParent(SceneController sceneParent) {
+		
+		myController = sceneParent;
+		
+	} 
     
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException, Exception
     {  
-        Main main = null;
+       Main main = null;
        Stage stage;
        Parent root;
        if (event.getSource()==btnProfile)
@@ -236,28 +253,35 @@ public class HomeController implements Initializable, ControlledScene {
     	  
     	  myController.setScene(Main.screen2ID);
     	  
-       }
-       
-       else 
-           {
-               stage = (Stage) btnChangeNameDone.getScene().getWindow();
-               stage.close();
+       }else {
+    	   stage = (Stage) btnChangeNameDone.getScene().getWindow();
+           stage.close();
            }
-    
     }
-    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    	
+    	rootPane.setOnKeyPressed(new EventHandler<KeyEvent>() {
+
+			@Override
+			public void handle(KeyEvent event) {
+				if(event.getCode() == KeyCode.A) {
+					man.setLayoutY(man.getLayoutY() - 50);
+				}
+			}
+		});
+    	
+    	rootPane.setOnKeyReleased(new EventHandler<KeyEvent>() {
+
+			@Override
+			public void handle(KeyEvent event) {
+				if (event.getCode() == KeyCode.A) {
+					man.setLayoutY(initial_man_pos);
+				}
+			}
+		});
+    	
     }
 
-
-	@Override
-	public void setSceneParent(SceneController sceneParent) {
-		
-		myController = sceneParent;
-		
-	}    
-    
 }
