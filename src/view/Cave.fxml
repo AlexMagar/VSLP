@@ -1,65 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="430.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CaveController">
+<Pane fx:id="cavePane" prefHeight="430.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CaveController">
    <children>
-      <Pane prefHeight="430.0" prefWidth="850.0">
-         <children>
-            <ImageView fitHeight="430.0" fitWidth="2200.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../image/cave/caveBackground.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="crystal1" fitHeight="150.0" fitWidth="200.0" layoutX="339.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/cave/crystal1.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="crystal2" fitHeight="150.0" fitWidth="200.0" layoutX="583.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/cave/crystal2.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="crystal3" fitHeight="150.0" fitWidth="200.0" layoutX="780.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/cave/crystal3.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="crystal4" fitHeight="150.0" fitWidth="200.0" layoutX="1013.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/cave/crystal4.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="crystal5" fitHeight="150.0" fitWidth="200.0" layoutX="1207.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/cave/crystal5.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="crystal6" fitHeight="150.0" fitWidth="200.0" layoutX="1442.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/cave/crystal6.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="crystal7" fitHeight="150.0" fitWidth="200.0" layoutX="1635.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/cave/crystal7.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="crystal8" fitHeight="150.0" fitWidth="200.0" layoutX="1848.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/cave/crystal8.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="crystal9" fitHeight="150.0" fitWidth="200.0" layoutX="2148.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/cave/crystal9.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
+      <ImageView fx:id="imgCBackground1" fitHeight="430.0" fitWidth="2200.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/cave/caveBackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal1" fitHeight="233.0" fitWidth="175.0" layoutX="333.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal2" fitHeight="204.0" fitWidth="152.0" layoutX="583.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal3" fitHeight="223.0" fitWidth="133.0" layoutX="822.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal4" fitHeight="208.0" fitWidth="126.0" layoutX="1038.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal4.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal5" fitHeight="208.0" fitWidth="200.0" layoutX="1204.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal5.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal6" fitHeight="189.0" fitWidth="223.0" layoutX="1449.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal6.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal7" fitHeight="226.0" fitWidth="164.0" layoutX="1669.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal7.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal8" fitHeight="216.0" fitWidth="186.0" layoutX="1878.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal8.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal9" fitHeight="233.0" fitWidth="102.0" layoutX="2118.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal9.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnStart" layoutX="403.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Start">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imgCBackground2" fitHeight="430.0" fitWidth="2200.0" layoutX="2200.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/cave/caveBackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgBat" fitHeight="30.0" fitWidth="100.0" layoutX="41.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/bat.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal11" fitHeight="233.0" fitWidth="175.0" layoutX="2528.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal12" fitHeight="204.0" fitWidth="152.0" layoutX="2787.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal13" fitHeight="223.0" fitWidth="133.0" layoutX="3020.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal14" fitHeight="208.0" fitWidth="126.0" layoutX="3217.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal4.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal15" fitHeight="208.0" fitWidth="200.0" layoutX="3390.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal5.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal16" fitHeight="189.0" fitWidth="223.0" layoutX="3629.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal6.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal17" fitHeight="226.0" fitWidth="164.0" layoutX="3881.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal7.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal19" fitHeight="233.0" fitWidth="102.0" layoutX="4319.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal9.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgcrystal18" fitHeight="216.0" fitWidth="186.0" layoutX="4101.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/crystal8.png" />
+         </image>
+      </ImageView>
    </children>
-</AnchorPane>
+</Pane>
