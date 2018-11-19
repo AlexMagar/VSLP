@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="430.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CarController">
+<AnchorPane prefHeight="430.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CarController">
    <children>
       <Pane fx:id="car_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="850.0">
          <children>
@@ -15,17 +15,17 @@
                   <Image url="@../image/sky.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgCloud1" fitHeight="81.0" fitWidth="118.0" layoutX="96.0" layoutY="60.0" pickOnBounds="true">
+            <ImageView fx:id="imgCloud1" fitHeight="81.0" fitWidth="118.0" layoutX="8.0" layoutY="179.0" pickOnBounds="true">
                <image>
                   <Image url="@../image/cloud1.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgCloud2" fitHeight="81.0" fitWidth="138.0" layoutX="356.0" layoutY="44.0" pickOnBounds="true">
+            <ImageView fx:id="imgCloud2" fitHeight="81.0" fitWidth="138.0" layoutX="315.0" layoutY="191.0" pickOnBounds="true">
                <image>
                   <Image url="@../image/cloud2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgCloud3" fitHeight="100.0" fitWidth="150.0" layoutX="585.0" layoutY="64.0" pickOnBounds="true">
+            <ImageView fx:id="imgCloud3" fitHeight="100.0" fitWidth="150.0" layoutX="579.0" layoutY="182.0" pickOnBounds="true">
                <image>
                   <Image url="@../image/cloud3.png" />
                </image>
@@ -35,42 +35,52 @@
                   <Image url="@../image/road.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgRBuilding" fitHeight="500.0" fitWidth="600.0" layoutX="490.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgRBuilding" fitHeight="100.0" fitWidth="100.0" layoutX="735.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/RBuilding.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgLBuilding" fitHeight="500.0" fitWidth="600.0" layoutX="-247.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgLBuilding" fitHeight="100.0" fitWidth="100.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/LBuilding.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgCar" fitHeight="220.0" fitWidth="261.0" layoutX="316.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgCar" fitHeight="165.0" fitWidth="180.0" layoutX="330.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/car.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgTree1" fitHeight="150.0" fitWidth="200.0" layoutX="661.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTree1" fitHeight="100.0" fitWidth="132.0" layoutX="715.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/tree1.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgTree2" fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTree2" fitHeight="150.0" fitWidth="66.0" layoutX="34.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/tree2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgTree3" fitHeight="150.0" fitWidth="200.0" layoutX="710.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTree3" fitHeight="113.0" fitWidth="89.0" layoutX="694.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/tree3.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="obstracle" fitHeight="49.0" fitWidth="80.0" layoutX="401.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="obstracle" fitHeight="80.0" fitWidth="100.0" layoutX="375.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/stone23.png" />
+                  <Image url="@../image/car3.png" />
             </image>
             </ImageView>
             <Button fx:id="goNext" layoutX="400.0" layoutY="27.0" mnemonicParsing="false" onAction="#goNextStage" text="Next" />
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="238.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/car1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="505.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/car2.png" />
+               </image>
+            </ImageView>
       <!--       
             <Button fx:id="btnPlay" layoutX="375.0" layoutY="185.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="60.0" prefWidth="100.0" text="play" />
             <Button fx:id="btnPause" layoutX="399.0" layoutY="14.0" mnemonicParsing="false" onAction="#buttonAction" text="Pause" visible="false" />
