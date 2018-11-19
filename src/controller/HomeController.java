@@ -4,12 +4,20 @@ package controller;
 import MyApp.Main;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
 import javafx.animation.ParallelTransition;
+import javafx.animation.SequentialTransition;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -19,6 +27,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -68,6 +77,18 @@ public class HomeController implements Initializable, ControlledScene {
     @FXML
     private ImageView imgTower4;
     
+    @FXML
+    private ImageView imgpipe1;
+    
+    @FXML
+    private ImageView imgpipe2;
+    
+    @FXML
+    private ImageView imgbird;
+    
+    @FXML
+    private ImageView imgbush;
+    
     @FXML 
     private Button btnProfileDone;
     
@@ -106,6 +127,9 @@ public class HomeController implements Initializable, ControlledScene {
     
     @FXML
     private ImageView man;
+    
+    @FXML
+    private ProgressBar progressBar;
     
 
 	@Override
@@ -193,42 +217,74 @@ public class HomeController implements Initializable, ControlledScene {
             btnPlay.setVisible(false);
             btnArena.setVisible(false);
             btnSetting.setVisible(false);
-            btnPause.setVisible(true);      
+            btnPause.setVisible(true);   
+            
+            ProgressBar progressBar = new ProgressBar();
+            Task task = taskCreator(10);
+            progressBar.progressProperty().unbind();
+            progressBar.progressProperty().bind(task.progressProperty());
+            new Thread(task).start();
+            
+
     	   
-    	               mountain1 = new TranslateTransition(Duration.millis(10000),imgMountain1);
+    	    mountain1 = new TranslateTransition(Duration.millis(20000),imgMountain1);
 			mountain1.setToX(-1*BACKGROUND_WIDTH);
-                       mountain1.setFromX(0);
+            mountain1.setFromX(0);
 			mountain1.setInterpolator(Interpolator.LINEAR);
 			
-			TranslateTransition mountain2 = new TranslateTransition(Duration.millis(10000),imgMountain2);
+			TranslateTransition mountain2 = new TranslateTransition(Duration.millis(20000),imgMountain2);
 			mountain2.setToX(-1*BACKGROUND_WIDTH);
-                       mountain2.setFromX(0);
+            mountain2.setFromX(0);
 			mountain2.setInterpolator(Interpolator.LINEAR);
 			
 			
-			TranslateTransition tower1 = new TranslateTransition(Duration.millis(10000),imgTower1);
+			TranslateTransition tower1 = new TranslateTransition(Duration.millis(20000),imgTower1);
 			tower1.setToX(-2*BACKGROUND_WIDTH);
-                       tower1.setFromX(0);
+            tower1.setFromX(0);
 			tower1.setInterpolator(Interpolator.LINEAR);
 			
-			TranslateTransition tower2 = new TranslateTransition(Duration.millis(10000),imgTower2);
+			TranslateTransition tower2 = new TranslateTransition(Duration.millis(20000),imgTower2);
 			tower2.setToX(-2*BACKGROUND_WIDTH);
-                       tower2.setFromX(0);
+            tower2.setFromX(0);
 			tower2.setInterpolator(Interpolator.LINEAR);
                        
-                       TranslateTransition tower3 = new TranslateTransition(Duration.millis(10000),imgTower3);
+            TranslateTransition tower3 = new TranslateTransition(Duration.millis(20000),imgTower3);
 			tower3.setToX(-2*BACKGROUND_WIDTH);
-                       tower3.setFromX(0);
+            tower3.setFromX(0);
 			tower3.setInterpolator(Interpolator.LINEAR);
 			
-			TranslateTransition tower4 = new TranslateTransition(Duration.millis(10000),imgTower4);
+			TranslateTransition tower4 = new TranslateTransition(Duration.millis(20000),imgTower4);
 			tower4.setToX(-2*BACKGROUND_WIDTH);
-                       tower4.setFromX(0);
+            tower4.setFromX(0);
 			tower4.setInterpolator(Interpolator.LINEAR);
 			
-			parallelTransition = new ParallelTransition(mountain1,mountain2,tower1,tower2,tower3,tower4);
+			TranslateTransition p11 = new TranslateTransition(Duration.millis(10000),imgpipe1);
+			p11.setFromX(0);
+			p11.setToX(-910);
+
+			TranslateTransition p12 = new TranslateTransition(Duration.millis(10000),imgpipe2);
+			p12.setFromX(0);
+			p12.setToX(-910);
+			p12.setDelay(Duration.millis(4000));
+			
+			TranslateTransition p13 = new TranslateTransition(Duration.millis(10000),imgbird);
+			p13.setFromX(0);
+			p13.setToX(-960);
+			p13.setDelay(Duration.millis(7500));
+			
+			TranslateTransition p14 = new TranslateTransition(Duration.millis(10000),imgbush);
+			p14.setFromX(0);
+			p14.setToX(-960);
+			p14.setDelay(Duration.millis(10000));
+		
+			ParallelTransition pipePT1 = new ParallelTransition(p11,p12,p13,p14);
+//			ParallelTransition pipePT2 = new ParallelTransition(p12,p13,p11);
+			//SequentialTransition sq = new SequentialTransition(pipePT1);
+						
+			
+			parallelTransition = new ParallelTransition(mountain1,pipePT1,mountain2,tower1,tower2,tower3,tower4);
 			parallelTransition.setCycleCount(Animation.INDEFINITE);
-                       parallelTransition.setInterpolator(Interpolator.LINEAR);
+            parallelTransition.setInterpolator(Interpolator.LINEAR);
 			parallelTransition.play();
        }
        else if(event.getSource()==btnPause){
@@ -259,7 +315,22 @@ public class HomeController implements Initializable, ControlledScene {
            }
     }
     
-    @Override
+    private Task taskCreator(int seconds){
+        return new Task() {
+
+                   @Override
+                   protected Object call() throws Exception {
+                       for(int i=0; i<seconds;i++){
+                        Thread.sleep(1000);
+                        updateProgress(i+1, seconds);
+                       
+                       }
+                       return true;
+                   }
+               };
+    }
+    
+	@Override
     public void initialize(URL url, ResourceBundle rb) {
     	
     	rootPane.setOnKeyPressed(new EventHandler<KeyEvent>() {

@@ -137,31 +137,35 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	
 	    @Override
 	    public void initialize(URL url, ResourceBundle rb) {
-	        TranslateTransition cloud1 = new TranslateTransition(Duration.millis(5000),imgCloud1);
+	        TranslateTransition cloud1 = new TranslateTransition(Duration.millis(15000),imgCloud1);
 	        cloud1.setFromY(0);
 	        cloud1.setFromX(setRandLayoutX());
 	        cloud1.setToY(-500);
 	        
-	        TranslateTransition cloud2 = new TranslateTransition(Duration.millis(4000),imgCloud2);
+	        TranslateTransition cloud2 = new TranslateTransition(Duration.millis(15000),imgCloud2);
 	        cloud2.setFromY(0);
 	        cloud2.setFromX(setRandLayoutX());
+	        cloud2.setDelay(Duration.millis(1500));
 	        cloud2.setToY(-500);
 	        
-	        TranslateTransition cloud3 = new TranslateTransition(Duration.millis(2000),imgCloud3);
+	        TranslateTransition cloud3 = new TranslateTransition(Duration.millis(15000),imgCloud3);
 	        cloud3.setFromY(0);
 	        cloud3.setFromX(setRandLayoutX());
+	        cloud3.setDelay(Duration.millis(2500));
 	        cloud3.setToY(-500);
 	        
 	        ScaleTransition scaleTransition1 = new ScaleTransition(Duration.seconds(5),imgCloud1);
 	        scaleTransition1.setToX(1.5);
 	        scaleTransition1.setToY(2.2);
 	        
-	        ScaleTransition scaleTransition2 = new ScaleTransition(Duration.seconds(4),imgCloud2);
+	        ScaleTransition scaleTransition2 = new ScaleTransition(Duration.seconds(5),imgCloud2);
 	        scaleTransition2.setToX(1.5);
+	        cloud2.setDelay(Duration.millis(1500));
 	        scaleTransition2.setToY(2.2);
 	        
-	        ScaleTransition scaleTransition3 = new ScaleTransition(Duration.seconds(3),imgCloud3);
+	        ScaleTransition scaleTransition3 = new ScaleTransition(Duration.seconds(5),imgCloud3);
 	        scaleTransition3.setToX(1.5);
+	        cloud3.setDelay(Duration.millis(2500));
 	        scaleTransition3.setToY(2.2);
 	      
 	        ParallelTransition pt = new ParallelTransition(cloud1,cloud2,cloud3,scaleTransition1,scaleTransition2,scaleTransition3);
@@ -222,9 +226,9 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	    	
 		}
 
-		public int  setRandLayoutX(){
+		public int setRandLayoutX(){
 	        Random r = new Random();
-	        int x = r.nextInt(999)+1;
+			int x = r.nextInt(500)+1;
 	    //    System.out.println("controller.CarController.setRandLayoutX()"+x);
 	        return x;
 	    }
