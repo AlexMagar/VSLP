@@ -153,22 +153,7 @@ public class CarController implements Initializable, ControlledScene {
 	}
 	    @Override
 	    public void initialize(URL url, ResourceBundle rb) {
-<<<<<<< HEAD
-	        TranslateTransition cloud1 = new TranslateTransition(Duration.millis(4000),imgCloud1);
-	        cloud1.setFromY(140);
-	   //     cloud1.setFromX(setRandLayoutX());
-	        cloud1.setToY(-200);
-	        
-	        TranslateTransition cloud2 = new TranslateTransition(Duration.millis(4000),imgCloud2);
-	        cloud2.setFromY(140);
-	  //      cloud2.setFromX(setRandLayoutX());
-	        cloud2.setToY(-200);
-	        
-	        TranslateTransition cloud3 = new TranslateTransition(Duration.millis(4000),imgCloud3);
-	        cloud3.setFromY(140);
-	  //      cloud3.setFromX(setRandLayoutX());
-	        cloud3.setToY(-200);
-=======
+
 	        TranslateTransition cloud1 = new TranslateTransition(Duration.millis(15000),imgCloud1);
 	        cloud1.setFromY(0);
 	        cloud1.setFromX(setRandLayoutX());
@@ -185,7 +170,6 @@ public class CarController implements Initializable, ControlledScene {
 	        cloud3.setFromX(setRandLayoutX());
 	        cloud3.setDelay(Duration.millis(2500));
 	        cloud3.setToY(-500);
->>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
 	        
 	        ScaleTransition scaleTransition1 = new ScaleTransition(Duration.seconds(5),imgCloud1);
 	        scaleTransition1.setToX(1.5);
@@ -206,23 +190,8 @@ public class CarController implements Initializable, ControlledScene {
 	        pt.setInterpolator(Interpolator.LINEAR);
 	        pt.play();
 	        
-<<<<<<< HEAD
-	        car_Pane.setOnKeyPressed(new EventHandler<KeyEvent>() {
-
-	        	@Override
-	    		public void handle(KeyEvent event) { 
-	    			switch (event.getCode()) {
-	    			case A:	imgCar.setLayoutX(imgCar.getLayoutX() - 50); break;
-	    			case D:	imgCar.setLayoutX(imgCar.getLayoutX() + 50); break;
-	    			default: System.out.println("press Valid Key"); break;
-	    			}	        
-	    		}
-			});
-=======
-	        
-	        
-	        car_Pane.setOnKeyPressed(this);
->>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
+   
+	//        car_Pane.setOnKeyPressed(this);
 	        
 	        Timer timer = new Timer();
 	        CarController app = this;
@@ -274,19 +243,16 @@ public class CarController implements Initializable, ControlledScene {
 	    	
 		}
 
-<<<<<<< HEAD
-		public int  setRandLayoutX(){
-			
-			int rand = new Random().nextInt(carInitialPos.length);
-			return carInitialPos[rand];
-	        
-=======
+//		public int  setRandLayoutX(){
+//			
+//			int rand = new Random().nextInt(carInitialPos.length);
+//			return carInitialPos[rand];
+	    
 		public int setRandLayoutX(){
 	        Random r = new Random();
 			int x = r.nextInt(500)+1;
 	    //    System.out.println("controller.CarController.setRandLayoutX()"+x);
 	        return x;
->>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
 	    }
 	
 			
