@@ -29,7 +29,7 @@ public class JumpController implements Initializable, ControlledScene{
 	
 	@FXML
 	public void goToHome(ActionEvent event) {
-		myController.setScene(Main.screen4ID);
+		myController.setScene(Main.screen1ID);
 	}
 
 	@Override
