@@ -68,11 +68,6 @@
             <Image url="@../image/cave/caveBackground.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgBat" fitHeight="30.0" fitWidth="100.0" layoutX="41.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/cave/bat.png" />
-         </image>
-      </ImageView>
       <ImageView fx:id="imgcrystal11" fitHeight="233.0" fitWidth="175.0" layoutX="2528.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/cave/crystal1.png" />
@@ -116,6 +111,11 @@
       <ImageView fx:id="imgcrystal18" fitHeight="216.0" fitWidth="186.0" layoutX="4101.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/cave/crystal8.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgBat" fitHeight="30.0" fitWidth="100.0" layoutX="108.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cave/bat.png" />
          </image>
       </ImageView>
    </children>

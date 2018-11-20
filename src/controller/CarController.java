@@ -153,6 +153,7 @@ public class CarController implements Initializable, ControlledScene {
 	}
 	    @Override
 	    public void initialize(URL url, ResourceBundle rb) {
+<<<<<<< HEAD
 	        TranslateTransition cloud1 = new TranslateTransition(Duration.millis(4000),imgCloud1);
 	        cloud1.setFromY(140);
 	   //     cloud1.setFromX(setRandLayoutX());
@@ -167,17 +168,37 @@ public class CarController implements Initializable, ControlledScene {
 	        cloud3.setFromY(140);
 	  //      cloud3.setFromX(setRandLayoutX());
 	        cloud3.setToY(-200);
+=======
+	        TranslateTransition cloud1 = new TranslateTransition(Duration.millis(15000),imgCloud1);
+	        cloud1.setFromY(0);
+	        cloud1.setFromX(setRandLayoutX());
+	        cloud1.setToY(-500);
+	        
+	        TranslateTransition cloud2 = new TranslateTransition(Duration.millis(15000),imgCloud2);
+	        cloud2.setFromY(0);
+	        cloud2.setFromX(setRandLayoutX());
+	        cloud2.setDelay(Duration.millis(1500));
+	        cloud2.setToY(-500);
+	        
+	        TranslateTransition cloud3 = new TranslateTransition(Duration.millis(15000),imgCloud3);
+	        cloud3.setFromY(0);
+	        cloud3.setFromX(setRandLayoutX());
+	        cloud3.setDelay(Duration.millis(2500));
+	        cloud3.setToY(-500);
+>>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
 	        
 	        ScaleTransition scaleTransition1 = new ScaleTransition(Duration.seconds(5),imgCloud1);
 	        scaleTransition1.setToX(1.5);
 	        scaleTransition1.setToY(2.2);
 	        
-	        ScaleTransition scaleTransition2 = new ScaleTransition(Duration.seconds(4),imgCloud2);
+	        ScaleTransition scaleTransition2 = new ScaleTransition(Duration.seconds(5),imgCloud2);
 	        scaleTransition2.setToX(1.5);
+	        cloud2.setDelay(Duration.millis(1500));
 	        scaleTransition2.setToY(2.2);
 	        
-	        ScaleTransition scaleTransition3 = new ScaleTransition(Duration.seconds(3),imgCloud3);
+	        ScaleTransition scaleTransition3 = new ScaleTransition(Duration.seconds(5),imgCloud3);
 	        scaleTransition3.setToX(1.5);
+	        cloud3.setDelay(Duration.millis(2500));
 	        scaleTransition3.setToY(2.2);
 	      
 	        ParallelTransition pt = new ParallelTransition(cloud1,cloud2,cloud3,scaleTransition1,scaleTransition2,scaleTransition3);
@@ -185,6 +206,7 @@ public class CarController implements Initializable, ControlledScene {
 	        pt.setInterpolator(Interpolator.LINEAR);
 	        pt.play();
 	        
+<<<<<<< HEAD
 	        car_Pane.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
 	        	@Override
@@ -196,6 +218,11 @@ public class CarController implements Initializable, ControlledScene {
 	    			}	        
 	    		}
 			});
+=======
+	        
+	        
+	        car_Pane.setOnKeyPressed(this);
+>>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
 	        
 	        Timer timer = new Timer();
 	        CarController app = this;
@@ -247,11 +274,19 @@ public class CarController implements Initializable, ControlledScene {
 	    	
 		}
 
+<<<<<<< HEAD
 		public int  setRandLayoutX(){
 			
 			int rand = new Random().nextInt(carInitialPos.length);
 			return carInitialPos[rand];
 	        
+=======
+		public int setRandLayoutX(){
+	        Random r = new Random();
+			int x = r.nextInt(500)+1;
+	    //    System.out.println("controller.CarController.setRandLayoutX()"+x);
+	        return x;
+>>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
 	    }
 	
 			

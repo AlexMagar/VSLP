@@ -114,20 +114,27 @@ public class CaveController implements Initializable, ControlledScene{
     {  
        if (event.getSource()==btnStart)
        {
-    	   btnStart.setVisible(false);
+    	    btnStart.setVisible(false);
     	   
+<<<<<<< HEAD
     	       	   
     	   TranslateTransition cavebg1 = new TranslateTransition(Duration.millis(10000),imgCBackground1);
     	   cavebg1.setToX(-1*2200);
     	   cavebg1.setFromX(0);
     	   cavebg1.setInterpolator(Interpolator.LINEAR);
+=======
+    	    TranslateTransition cavebg1 = new TranslateTransition(Duration.millis(10000),imgCBackground1);
+    	    cavebg1.setToX(-1*2200);
+    	    cavebg1.setFromX(0);
+    	    cavebg1.setInterpolator(Interpolator.LINEAR);
+>>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
     	   
-    	   TranslateTransition cavebg2 = new TranslateTransition(Duration.millis(10000),imgCBackground2);
-    	   cavebg2.setToX(-1*2200);
-    	   cavebg2.setFromX(0);
-    	   cavebg2.setInterpolator(Interpolator.LINEAR);
+    	    TranslateTransition cavebg2 = new TranslateTransition(Duration.millis(10000),imgCBackground2);
+    	    cavebg2.setToX(-1*2200);
+    	    cavebg2.setFromX(0);
+    	    cavebg2.setInterpolator(Interpolator.LINEAR);
 			
-    	   TranslateTransition crystal1 = new TranslateTransition(Duration.millis(10000), imgcrystal1);
+    	    TranslateTransition crystal1 = new TranslateTransition(Duration.millis(10000), imgcrystal1);
 		    crystal1.setToX(-1*2200);
 			crystal1.setFromX(0);
 			crystal1.setInterpolator(Interpolator.LINEAR);

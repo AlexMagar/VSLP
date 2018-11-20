@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane fx:id="tranningPane" prefHeight="430.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DemoPracticeController">
+   <children>
+      <Rectangle fx:id="boxRec" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="101.0" layoutX="365.0" layoutY="165.0" stroke="BLACK"  strokeType="INSIDE" width="121.0" />
+   <!--    <TextArea fx:id="areaText" prefHeight="148.0" prefWidth="224.0" text="Use your voice to control the box:&#10;Some command:&#10;up : to move box upward&#10;down: to move box downward&#10;left: to move box left side&#10;right: to move right side&#10;zoom in: to increase size of box&#10;zoom out: to decrease the size of  box" />
+    --></children>
+</AnchorPane>

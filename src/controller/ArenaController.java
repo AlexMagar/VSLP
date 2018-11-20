@@ -2,38 +2,43 @@ package controller;
 
 import java.io.IOException;
 
-import javafx.application.Platform;
+import MyApp.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
-public class ArenaController {
+public class ArenaController implements ControlledScene{
+	
+	SceneController myController;
 	
 	@FXML
-	private Button btnArenaDone;
+	private Button btnCar, btnPractise, btnArenaDone;
+	
+
+	@Override
+	public void setSceneParent(SceneController sceneParent) {
+		myController = sceneParent;
+	}
 	
 	@FXML
-	private Button templeRunLoad;
-	
-	public void loadNewArenia() {
+	public void handleButtonAction(ActionEvent event) throws IOException, Exception{
 		
-		try {
-			Stage stage = new Stage();
-			Parent root = FXMLLoader.load(getClass().getResource("/view/Car.fxml"));
-			stage.setScene(new Scene(root));
-		    stage.show();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(event.getSource() == btnCar) {
+			myController.setScene(Main.screenId[1]);
+		}else if(event.getSource() == btnPractise) {
+			myController.setScene(Main.screenId[4]);
 		}
 		
 	}
 	
 	public void onDone() {
-		Platform.exit();
+		
 	}
-	
+
+	@Override
+	public void makeDecision(String output) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
