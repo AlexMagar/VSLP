@@ -122,6 +122,6 @@
             <Glow />
          </effect>
       </Button>
-      <ProgressBar fx:id="progressBar" accessibleRole="IMAGE_VIEW" layoutY="407.0" prefHeight="18.0" prefWidth="858.0" progress="0.72" />
+      <ProgressBar fx:id="progressBar" accessibleRole="IMAGE_VIEW" layoutY="407.0" prefHeight="18.0" prefWidth="858.0" progress="0.0" />
    </children>
 </Pane>
