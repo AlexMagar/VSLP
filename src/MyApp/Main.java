@@ -21,10 +21,10 @@ public class Main extends Application {
 	public static String screen1File = "/view/Home.fxml";
 	public static String screen2ID = "car";
 	public static String screen2File = "/view/Car.fxml";
-	public static String screen3ID = "jump";
-	public static String screen3File = "/view/Jump.fxml";
-	public static String screen4ID = "cave";
-	public static String screen4File = "/view/Cave.fxml";
+	public static String screen3ID = "cave";
+	public static String screen3File = "/view/cave.fxml";
+	public static String screen4ID = "jump";
+	public static String screen4File = "/view/jump.fxml";
 	
     @Override
     public void start(Stage stage) throws Exception {
