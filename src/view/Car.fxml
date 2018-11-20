@@ -35,9 +35,9 @@
                   <Image url="@../image/road.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgRBuilding" fitHeight="100.0" fitWidth="100.0" layoutX="735.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgRBuilding" fitHeight="32.0" fitWidth="72.0" layoutX="729.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/RBuilding.png" />
+                  <Image url="@../image/bush.png" />
                </image>
             </ImageView>
             <ImageView fx:id="imgLBuilding" fitHeight="100.0" fitWidth="100.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
@@ -50,17 +50,17 @@
                   <Image url="@../image/car.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgTree1" fitHeight="100.0" fitWidth="132.0" layoutX="715.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTree1" fitHeight="59.0" fitWidth="73.0" layoutX="753.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/tree1.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgTree2" fitHeight="150.0" fitWidth="66.0" layoutX="34.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTree2" fitHeight="81.0" fitWidth="36.0" layoutX="90.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/tree2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgTree3" fitHeight="113.0" fitWidth="89.0" layoutX="694.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTree3" fitHeight="70.0" fitWidth="53.0" layoutX="799.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/tree3.png" />
                </image>

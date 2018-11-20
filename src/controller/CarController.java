@@ -173,6 +173,8 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	        pt.setInterpolator(Interpolator.LINEAR);
 	        pt.play();
 	        
+	        
+	        
 	        car_Pane.setOnKeyPressed(this);
 	        
 	        Timer timer = new Timer();
