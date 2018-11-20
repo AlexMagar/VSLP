@@ -4,7 +4,6 @@ import java.awt.event.KeyAdapter;
 import java.util.ArrayList;
 
 import MyApp.Main;
-import javafx.scene.input.KeyEvent;
 
 public class KeyInputController extends KeyAdapter{
 	
@@ -27,7 +26,7 @@ public class KeyInputController extends KeyAdapter{
 			return false;
 		}else {
 			System.out.println("key remove");
-			return false;
+			return true;
 		}
 	}
 

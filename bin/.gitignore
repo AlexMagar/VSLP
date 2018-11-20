@@ -1,6 +1,15 @@
+/color/
+/image/
+/view/
 /MyApp/
 /controller/
+<<<<<<< HEAD
 /image/
 /marytts/
 /scenes/
 /view/
+=======
+/marytts/
+/scenes/
+/sound/
+>>>>>>> 77a3d3f75cbcf552e29bf78a6fec51d1ff52374c

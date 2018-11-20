@@ -2,73 +2,125 @@ package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import javax.management.timer.Timer;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import MyApp.Main;
-import javafx.animation.AnimationTimer;
 import javafx.animation.ParallelTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
+import marytts.TextToSpeech;
 
 public class JumpController implements Initializable, ControlledScene{
 	
 	static int BACKGROUND_WIDTH = 1200;
-	private ParallelTransition parallelTrans;
     SceneController myController;
+    private static double init_man_X=60, init_man_Y=226;
+    
+    TextToSpeech tts = new TextToSpeech();
     
     Image[] manRunning;
     Image[] manStopped;
     Image manCollide;
  	
+    @FXML
+    private ImageView man1;
+    
+    @FXML
+    private Pane jump_pane;
+    
 	@FXML
 	private Button goHome;
 	
+<<<<<<< HEAD
 	@FXML
 	public void goToHome(ActionEvent event) {
 		myController.setScene(Main.screen1ID);
 	}
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		
-		manRunning = new Image[23];
-		manStopped = new Image[19];
-		manCollide = new Image("/image/character/collide.png");
-		
-		for(int i = 0; i < manRunning.length; i++) {
-			if(i < manRunning.length) {
-				manRunning[i] = new Image("image/character/d ("+(i+1)+").png");
-			}else if (i < manStopped.length) {
-				manStopped[i] = new Image("image/character/b ("+(i+1)+").png");
-			}
-		}
-		
-		final long startNanoTime = System.nanoTime();
-		
-		new AnimationTimer() {
-			
-			@Override
-			public void handle(long now) {
-
-				System.out.println("hello world");
-				
-			}
-		};
-		
-	}
-
+=======
+	
+>>>>>>> 77a3d3f75cbcf552e29bf78a6fec51d1ff52374c
 	@Override
 	public void setSceneParent(SceneController sceneParent) {
 		
 		myController = sceneParent;
 		
+	}	
+	
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		jump_pane.setOnKeyPressed(new EventHandler<KeyEvent>() {
+
+			@Override
+			public void handle(KeyEvent event) {
+				
+				if(event.getCode() == KeyCode.A) {
+					man1.setLayoutY(man1.getLayoutY()-150);
+				}
+			}
+		});
+				
+		jump_pane.setOnKeyReleased(new EventHandler<KeyEvent>() {
+
+			@Override
+			public void handle(KeyEvent event) {
+				if(event.getCode() == KeyCode.A) {
+					man1.setLayoutY(init_man_Y);
+				}
+				
+			}
+		});
+		Timer timer = new Timer();
+		JumpController app = this;
+		timer.scheduleAtFixedRate(new TimerTask() {
+			
+			@Override
+			public void run() {
+				app.update();				
+			}
+		}, 20, 20);
+		
+	}
+	
+
+	
+	@FXML
+	public void goToHome(ActionEvent event) {
+		myController.setScene(Main.screenId[3]);
+	}
+	
+	public void update() {
+		
 	}
 
 
+	@Override
+	public void makeDecision(String output) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void detectCollision() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	
 	
 //	@FXML
 //	private void playScene(ActionEvent event) {

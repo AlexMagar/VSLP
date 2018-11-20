@@ -3,7 +3,6 @@ package controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import MyApp.Main;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.ParallelTransition;
@@ -12,17 +11,19 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class CaveController implements Initializable, ControlledScene{
 	
 	SceneController myController;
+	
+	@FXML
+	private Pane cavePane;
 
 	@FXML
     private ImageView imgCBackground1;
@@ -84,7 +85,6 @@ public class CaveController implements Initializable, ControlledScene{
 	@FXML
     private ImageView imgcrystal19;
 	
-	
 	@FXML
     private ImageView imgBat;
 	
@@ -95,6 +95,19 @@ public class CaveController implements Initializable, ControlledScene{
     private Pane CavePane;
 	
 	private ParallelTransition parallelTransition;
+	
+    
+    @Override
+	public void setSceneParent(SceneController sceneParent) {
+		
+		myController = sceneParent;
+		
+	}
+    
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+	}
     
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException, Exception
@@ -102,7 +115,7 @@ public class CaveController implements Initializable, ControlledScene{
        if (event.getSource()==btnStart)
        {
     	    btnStart.setVisible(false);
-    	   
+
     	    TranslateTransition cavebg1 = new TranslateTransition(Duration.millis(10000),imgCBackground1);
     	    cavebg1.setToX(-1*2200);
     	    cavebg1.setFromX(0);
@@ -207,22 +220,42 @@ public class CaveController implements Initializable, ControlledScene{
 			parallelTransition = new ParallelTransition(cavebg1,cavebg2,crystal1,crystal2,crystal3,crystal4,crystal5,crystal6,crystal7,crystal8,crystal9,crystal11,crystal12,crystal13,crystal14,crystal15,crystal16,crystal17,crystal18,crystal19);
 			parallelTransition.setCycleCount(Animation.INDEFINITE);
             parallelTransition.setInterpolator(Interpolator.LINEAR);
+            
+    		cavePane.setOnKeyPressed(new EventHandler<KeyEvent>() {
+
+    			@Override
+    			public void handle(KeyEvent event) {
+    				System.out.println("hello1");
+    				if(event.getCode() == KeyCode.A) {
+        				System.out.println("hello2");
+    					imgBat.setLayoutY(imgBat.getLayoutY()-1.9);
+    				}else if (event.getCode() == KeyCode.W) {
+        				System.out.println("hello3");
+    					imgBat.setLayoutY(imgBat.getLayoutY()+1.9);
+    				}else {
+
+        				System.out.println("hello4");
+    				}
+    			}
+    		   });
+    		   
+            
 			parallelTransition.play();
        }
          
-    }  
-    
-    @Override
-	public void setSceneParent(SceneController sceneParent) {
-		
-		myController = sceneParent;
-		
-	}
-    
+    }
+
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void makeDecision(String output) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void detectCollision() {
+		// TODO Auto-generated method stub
+		
+	}  
+
 
 }

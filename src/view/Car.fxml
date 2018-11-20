@@ -6,7 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
+<<<<<<< HEAD
+<AnchorPane fx:id="carPane" prefHeight="430.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CarController">
+=======
 <AnchorPane prefHeight="430.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CarController">
+>>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
    <children>
       <Pane fx:id="car_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="850.0">
          <children>
@@ -20,12 +24,28 @@
                   <Image url="@../image/cloud1.png" />
                </image>
             </ImageView>
+<<<<<<< HEAD
             <ImageView fx:id="imgCloud2" fitHeight="81.0" fitWidth="138.0" layoutX="315.0" layoutY="191.0" opacity="0.7" pickOnBounds="true">
+=======
+<<<<<<< HEAD
+            <ImageView fx:id="imgCloud2" fitHeight="81.0" fitWidth="138.0" layoutX="340.0" layoutY="74.0" pickOnBounds="true">
+=======
+            <ImageView fx:id="imgCloud2" fitHeight="81.0" fitWidth="138.0" layoutX="315.0" layoutY="191.0" pickOnBounds="true">
+>>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
+>>>>>>> 77a3d3f75cbcf552e29bf78a6fec51d1ff52374c
                <image>
                   <Image url="@../image/cloud2.png" />
                </image>
             </ImageView>
+<<<<<<< HEAD
             <ImageView fx:id="imgCloud3" fitHeight="100.0" fitWidth="150.0" layoutX="579.0" layoutY="182.0" opacity="0.7" pickOnBounds="true">
+=======
+<<<<<<< HEAD
+            <ImageView fx:id="imgCloud3" fitHeight="100.0" fitWidth="150.0" layoutX="530.0" layoutY="64.0" pickOnBounds="true">
+=======
+            <ImageView fx:id="imgCloud3" fitHeight="100.0" fitWidth="150.0" layoutX="579.0" layoutY="182.0" pickOnBounds="true">
+>>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
+>>>>>>> 77a3d3f75cbcf552e29bf78a6fec51d1ff52374c
                <image>
                   <Image url="@../image/cloud3.png" />
                </image>
@@ -65,7 +85,15 @@
                   <Image url="@../image/tree3.png" />
                </image>
             </ImageView>
+<<<<<<< HEAD
             <ImageView fx:id="imgCar2" fitHeight="80.0" fitWidth="100.0" layoutX="375.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+=======
+<<<<<<< HEAD
+            <ImageView fx:id="obstracle" fitHeight="49.0" fitWidth="80.0" layoutX="400.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+=======
+            <ImageView fx:id="obstracle" fitHeight="80.0" fitWidth="100.0" layoutX="375.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+>>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
+>>>>>>> 77a3d3f75cbcf552e29bf78a6fec51d1ff52374c
                <image>
                   <Image url="@../image/car3.png" />
             </image>

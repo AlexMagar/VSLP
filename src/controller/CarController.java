@@ -13,17 +13,15 @@ import javafx.animation.ParallelTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 
-public class CarController implements Initializable, ControlledScene, EventHandler<KeyEvent> {
+public class CarController implements Initializable, ControlledScene {
 	
 	SceneController myController;
 	
@@ -37,11 +35,19 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	private ImageView imgTree1,imgTree2,imgTree3,imgCar1,imgCar2,imgCar3;
 
 	@FXML
+<<<<<<< HEAD
 	private Button btnPlay,goNext,btnPause;
 
 	private final static int MAX_Y = 350, MIN_Y = 140, MIN_X = 300, MAX_X =500;
+=======
+	private Button btnPause;
+	
+	private final static int MAX_Y = 350, MIN_Y = 140;
+>>>>>>> 77a3d3f75cbcf552e29bf78a6fec51d1ff52374c
 	private final static int SMALL_START_SIZE = 80;
 	boolean collisionDetect = false;
+	
+	static int carInitialPos[] = {300, 400, 500};
 	
 //	@FXML
 //	private void buttonAction(ActionEvent e) throws IOException,Exception{
@@ -90,8 +96,23 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 //	}
 //	
 	
+	@Override
+	public void setSceneParent(SceneController sceneParent) {
+		
+		myController = sceneParent;
+		
+	}
+	
+
+	@Override
+	public void makeDecision(String output) {
+		
+		
+		
+	}
 	    @Override
 	    public void initialize(URL url, ResourceBundle rb) {
+
 	        TranslateTransition cloud1 = new TranslateTransition(Duration.millis(15000),imgCloud1);
 	        cloud1.setFromY(0);
 	        cloud1.setFromX(setRandLayoutX());
@@ -128,9 +149,8 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	        pt.setInterpolator(Interpolator.LINEAR);
 	        pt.play();
 	        
-	        
-	        
-	        car_Pane.setOnKeyPressed(this);
+   
+	//        car_Pane.setOnKeyPressed(this);
 	        
 	        Timer timer = new Timer();
 	        CarController app = this;
@@ -142,13 +162,14 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 					app.update();
 					
 				}
-			}, 20, 20);
+			}, 2000, 2000);
 	        
 	        
 	    }  
 	    
 	    public void moveStone() {
 	    	
+<<<<<<< HEAD
 	    	int xdiff = MAX_X - MIN_X;
 	    	int newX = (int)Math.floor(Math.random() * xdiff) + MIN_X;
 	    	
@@ -165,6 +186,23 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	    		imgCar1.setFitHeight(SMALL_START_SIZE);
 	    		imgCar1.setFitWidth(SMALL_START_SIZE);
 	    		
+=======
+	    	double currentY = 140;
+
+	    	if(currentY < MAX_Y) {
+	    		currentY = currentY + 0.7;
+	    		obstracle.setLayoutY(currentY);
+	    		obstracle.setLayoutX(setRandLayoutX());
+	    	//	System.out.println(setRandLayoutX());
+	    	//	obstracle.setFitHeight(SMALL_START_SIZE * (currentY * 0.009));
+	    	//	obstracle.setFitWidth(SMALL_START_SIZE * (currentY * 0.009));
+	    		obstracle.setLayoutX(obstracle.getLayoutX() - 1.5);
+
+	    	}else {
+	    		obstracle.setLayoutY(MIN_Y);
+	    		obstracle.setFitHeight(SMALL_START_SIZE);
+	    		obstracle.setFitWidth(SMALL_START_SIZE);    		
+>>>>>>> 77a3d3f75cbcf552e29bf78a6fec51d1ff52374c
 	    	}
 	    	
 	    }
@@ -183,6 +221,11 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	    	
 		}
 
+//		public int  setRandLayoutX(){
+//			
+//			int rand = new Random().nextInt(carInitialPos.length);
+//			return carInitialPos[rand];
+	    
 		public int setRandLayoutX(){
 	        Random r = new Random();
 	        int low = 100;
@@ -192,28 +235,17 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	        return x;
 	    }
 	
-	
-		@Override
-		public void setSceneParent(SceneController sceneParent) {
 			
-			myController = sceneParent;
+		@FXML
+		public void goNextStage(ActionEvent event) {
+			myController.setScene(Main.screenId[2]);
+		}
+
+
+		@Override
+		public void detectCollision() {
+			// TODO Auto-generated method stub
 			
 		}
 		
-		@FXML
-		public void goNextStage(ActionEvent event) {
-			myController.setScene(Main.screen3ID);
-		}
-
-		@Override
-		public void handle(KeyEvent event) {
-			int carLeftPos = 187, carRightPos = 338;  
-			switch (event.getCode()) {
-			case A:	imgCar.setLayoutX(imgCar.getLayoutX() - 50); break;
-			case D:	imgCar.setLayoutX(imgCar.getLayoutX() + 50); break;
-			default: System.out.println("press Valid Key"); break;
-			
-			}
-    
-		}
 }

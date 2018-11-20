@@ -2,8 +2,11 @@
 package controller;
 
 import MyApp.Main;
+import groovy.sql.OutParameter;
+
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
@@ -37,21 +40,25 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-
 public class HomeController implements Initializable, ControlledScene {
 	
 	SceneController myController;
 
     private int BACKGROUND_WIDTH = 1200;
-    private static double initial_man_pos = 228.0;
+    private int man_inital_pos = 228;
     private ParallelTransition parallelTransition;
     public TranslateTransition mountain1;
     
     @FXML
     private Pane rootPane;
     
+<<<<<<< HEAD
     @FXML 
     private Button btnProfile,btnPause,btnResume;
+=======
+    @FXML
+    private Button btnProfile;
+>>>>>>> 77a3d3f75cbcf552e29bf78a6fec51d1ff52374c
     
     @FXML
     private ImageView imgMountain1,imgMountain2,imgTower1,imgTower2,imgTower3,imgTower4;
@@ -63,16 +70,44 @@ public class HomeController implements Initializable, ControlledScene {
     private Button btnProfileDone,btnSetting,btnExit,btnCar,btnSettingDone,btnChangeName,btnPlay;
   
     @FXML
+<<<<<<< HEAD
     private Button btnChangeNameDone,btnArena,btnArenaDone;
+=======
+    private Button btnSetting;
+    
+    @FXML
+    private Button btnExit;
+    
+    @FXML
+    private Button btnCar;
+    
+    @FXML
+    private Button btnSettingDone;
+    
+    @FXML
+    private Button btnChangeName;
+        
+    @FXML
+    private ImageView man;
+    
+    @FXML
+    private Button btnPlay, btnChangeNameDone, btnArena, btnArenaDone;
+>>>>>>> 77a3d3f75cbcf552e29bf78a6fec51d1ff52374c
     
     @FXML
     private TextField txtPlayerName;
     
     @FXML
+<<<<<<< HEAD
     private Label lblStatus;
 
+=======
+    private Label lblStatus, lblScore;
+    
+>>>>>>> 77a3d3f75cbcf552e29bf78a6fec51d1ff52374c
     @FXML
     private ProgressBar progressBar;
+    
     
 
 	@Override
@@ -81,11 +116,15 @@ public class HomeController implements Initializable, ControlledScene {
 		myController = sceneParent;
 		
 	} 
+	
+	int tmt = (int)(new Date().getTime());
     
-    @FXML
+	@FXML
     private void handleButtonAction(ActionEvent event) throws IOException, Exception
     {  
-       Main main = null;
+		
+		
+		
        Stage stage;
        Parent root;
        if (event.getSource()==btnProfile)
@@ -96,9 +135,12 @@ public class HomeController implements Initializable, ControlledScene {
            stage.initModality(Modality.APPLICATION_MODAL);
            stage.initOwner(btnProfile.getScene().getWindow());
            stage.showAndWait();
+           
+           
        }
        else if (event.getSource()==btnProfileDone)
        {
+    	   
            stage =(Stage) btnProfileDone.getScene().getWindow();
            stage.close();
        }
@@ -126,23 +168,25 @@ public class HomeController implements Initializable, ControlledScene {
            stage.initOwner(btnSetting.getScene().getWindow());
            stage.showAndWait();
        }
-       else if (event.getSource()==btnArenaDone)
-       {
-           stage = (Stage)btnArenaDone.getScene().getWindow();
-           stage.close();
-       }
-       
-              
-       else if(event.getSource()==btnCar){
-           stage = (Stage)btnCar.getScene().getWindow();
-           stage.close();
-           stage = new Stage();
-           root = FXMLLoader.load(getClass().getResource("/view/Car.fxml"));
-           stage.setScene(new Scene(root));
-           stage.initModality(Modality.APPLICATION_MODAL);
-           stage.initOwner(btnCar.getScene().getWindow());
-           stage.showAndWait();
-       }
+//       else if (event.getSource()==btnArenaDone)
+//       {
+//           stage = (Stage)btnArenaDone.getScene().getWindow();
+//           stage.close();
+//       }
+//       
+//              
+//       else if(event.getSource()==btnCar){
+////           stage = (Stage)btnCar.getScene().getWindow();
+////           stage.close();
+////           stage = new Stage();
+////           root = FXMLLoader.load(getClass().getResource("/view/Car.fxml"));
+////           stage.setScene(new Scene(root));
+////           stage.initModality(Modality.APPLICATION_MODAL);
+////           stage.initOwner(btnCar.getScene().getWindow());
+////           stage.showAndWait();
+////           
+//           myController.setScene(Main.screenId[1]);
+//       }
        
        else if (event.getSource()==btnChangeName)
        {
@@ -160,6 +204,7 @@ public class HomeController implements Initializable, ControlledScene {
             btnPlay.setVisible(false);
             btnArena.setVisible(false);
             btnSetting.setVisible(false);
+
             btnPause.setVisible(true);   
             
             ProgressBar progressBar = new ProgressBar();
@@ -168,8 +213,6 @@ public class HomeController implements Initializable, ControlledScene {
             progressBar.progressProperty().bind(task.progressProperty());
             new Thread(task).start();
             
-
-    	   
     	    mountain1 = new TranslateTransition(Duration.millis(20000),imgMountain1);
 			mountain1.setToX(-1*BACKGROUND_WIDTH);
             mountain1.setFromX(0);
@@ -228,7 +271,10 @@ public class HomeController implements Initializable, ControlledScene {
 			parallelTransition = new ParallelTransition(mountain1,pipePT1,mountain2,tower1,tower2,tower3,tower4);
 			parallelTransition.setCycleCount(Animation.INDEFINITE);
             parallelTransition.setInterpolator(Interpolator.LINEAR);
+
 			parallelTransition.play();
+			
+		
        }
        else if(event.getSource()==btnPause){
            if (parallelTransition.getStatus()==Animation.Status.RUNNING){
@@ -250,7 +296,7 @@ public class HomeController implements Initializable, ControlledScene {
 //           main.start(stage);
  //   	  Platform.exit();
     	  
-    	  myController.setScene(Main.screen2ID);
+    	  myController.setScene(Main.screenId[1]);
     	  
        }else {
     	   stage = (Stage) btnChangeNameDone.getScene().getWindow();
@@ -276,26 +322,48 @@ public class HomeController implements Initializable, ControlledScene {
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
     	
-    	rootPane.setOnKeyPressed(new EventHandler<KeyEvent>() {
-
-			@Override
-			public void handle(KeyEvent event) {
-				if(event.getCode() == KeyCode.A) {
-					man.setLayoutY(man.getLayoutY() - 50);
-				}
-			}
-		});
+    	System.out.println(tmt - 1);
     	
-    	rootPane.setOnKeyReleased(new EventHandler<KeyEvent>() {
-
-			@Override
-			public void handle(KeyEvent event) {
-				if (event.getCode() == KeyCode.A) {
-					man.setLayoutY(initial_man_pos);
-				}
-			}
-		});
+//    	rootPane.setOnKeyPressed(new EventHandler<KeyEvent>() {
+//
+//			@Override
+//			public void handle(KeyEvent event) {
+//				if(event.getCode() == KeyCode.A) {
+//					man.setLayoutY(man.getLayoutY() - 50);
+//				}
+//			}
+//		});
+//    	
+//    	rootPane.setOnKeyReleased(new EventHandler<KeyEvent>() {
+//
+//			@Override
+//			public void handle(KeyEvent event) {
+//				if (event.getCode() == KeyCode.A) {
+//					man.setLayoutY(228);
+//				}
+//			}
+//		});
     	
     }
+
+	@Override
+	public void makeDecision(String output) {
+		output = output.trim();
+		if (output.contains("up")) {
+			
+			man.setLayoutY(man.getLayoutY() -20);
+			System.out.println("form the homeController:"+output);			
+		}else if(output.contains(null)) {
+			man.setLayoutY(man_inital_pos);
+		}
+	}
+
+	@Override
+	public void detectCollision() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 
 }
