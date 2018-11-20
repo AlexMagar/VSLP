@@ -13,12 +13,10 @@ import javafx.animation.ParallelTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
@@ -259,6 +257,13 @@ public class CarController implements Initializable, ControlledScene {
 		@FXML
 		public void goNextStage(ActionEvent event) {
 			myController.setScene(Main.screenId[2]);
+		}
+
+
+		@Override
+		public void detectCollision() {
+			// TODO Auto-generated method stub
+			
 		}
 		
 }

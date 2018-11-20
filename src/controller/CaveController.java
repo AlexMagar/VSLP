@@ -115,19 +115,11 @@ public class CaveController implements Initializable, ControlledScene{
        if (event.getSource()==btnStart)
        {
     	    btnStart.setVisible(false);
-    	   
-<<<<<<< HEAD
-    	       	   
-    	   TranslateTransition cavebg1 = new TranslateTransition(Duration.millis(10000),imgCBackground1);
-    	   cavebg1.setToX(-1*2200);
-    	   cavebg1.setFromX(0);
-    	   cavebg1.setInterpolator(Interpolator.LINEAR);
-=======
+
     	    TranslateTransition cavebg1 = new TranslateTransition(Duration.millis(10000),imgCBackground1);
     	    cavebg1.setToX(-1*2200);
     	    cavebg1.setFromX(0);
     	    cavebg1.setInterpolator(Interpolator.LINEAR);
->>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
     	   
     	    TranslateTransition cavebg2 = new TranslateTransition(Duration.millis(10000),imgCBackground2);
     	    cavebg2.setToX(-1*2200);
@@ -255,6 +247,12 @@ public class CaveController implements Initializable, ControlledScene{
 
 	@Override
 	public void makeDecision(String output) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void detectCollision() {
 		// TODO Auto-generated method stub
 		
 	}  

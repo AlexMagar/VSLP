@@ -155,4 +155,10 @@ public class DemoPracticeController implements ControlledScene{
 		});
 	}
 
+	@Override
+	public void detectCollision() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

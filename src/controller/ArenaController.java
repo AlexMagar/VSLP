@@ -41,4 +41,10 @@ public class ArenaController implements ControlledScene{
 		
 	}
 
+	@Override
+	public void detectCollision() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -105,6 +105,13 @@ public class JumpController implements Initializable, ControlledScene{
 	}
 
 
+	@Override
+	public void detectCollision() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	
 	
 //	@FXML
