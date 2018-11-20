@@ -22,10 +22,21 @@ public class SceneController extends StackPane{
 	//String = id of the particular scene and,
 	//Node = represent root of the scene graph of the particular scene
 	private HashMap<String, Node> screens = new HashMap<>();
+	private HashMap<String, Object> control = new HashMap<>();
 
 	public SceneController() {
 		super();
 	}
+	
+	public Object getController(String name) {
+		return control.get(name);
+		
+	}
+
+	public void addController(String name, Object controller) {
+		control.put(name, controller);
+	}
+
 	
 	//add the scene to the collection which is adding in hashmap
 	public void addScene(String name, Node scene) {
@@ -47,16 +58,18 @@ public class SceneController extends StackPane{
 			FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resources));
 			Parent loadScreen = (Parent) myLoader.load();
 			ControlledScene mySceneController = ((ControlledScene) myLoader.getController());
+			System.out.println(mySceneController);
 			mySceneController.setSceneParent(this);
+			addController(name, mySceneController);
 			addScene(name, loadScreen); //added to HashMap 
 			return true;
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
 			return false;
 		} 
 	}
+	
 
 	//this method tries to display the scene with a predefined name
 	//first it makes sure the scene has been already loaded. then if there is more than
