@@ -28,11 +28,13 @@ public class SceneController extends StackPane{
 		super();
 	}
 	
+	//return the controller object
 	public Object getController(String name) {
 		return control.get(name);
 		
 	}
-
+	
+	//add controller object in the hashMap with respect to name
 	public void addController(String name, Object controller) {
 		control.put(name, controller);
 	}
