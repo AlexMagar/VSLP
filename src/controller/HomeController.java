@@ -6,11 +6,8 @@ import groovy.sql.OutParameter;
 
 import java.io.IOException;
 import java.net.URL;
-<<<<<<< HEAD
 import java.util.Date;
-=======
 import java.util.Random;
->>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
@@ -20,13 +17,10 @@ import javafx.animation.ParallelTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
-<<<<<<< HEAD
-=======
 import javafx.application.Platform;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.concurrent.Task;
->>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -51,17 +45,14 @@ public class HomeController implements Initializable, ControlledScene {
 	SceneController myController;
 
     private int BACKGROUND_WIDTH = 1200;
+    private int man_inital_pos = 228;
     private ParallelTransition parallelTransition;
     public TranslateTransition mountain1;
     
     @FXML
     private Pane rootPane;
     
-    @FXML 
-<<<<<<< HEAD
-    private Button btnProfile, btnPause, btnResume, btnProfileDone, btnSetting, btnExit, btnCar, btnSettingDone, btnChangeName;
-     
-=======
+    @FXML
     private Button btnProfile;
     
     @FXML 
@@ -117,13 +108,9 @@ public class HomeController implements Initializable, ControlledScene {
     
     @FXML
     private Button btnChangeName;
-    
+        
     @FXML
-    private Button btnPlay;
-    
->>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
-    @FXML
-    private ImageView imgMountain1, imgMountain2, imgTower1, imgTower2, imgTower3, imgTower4, man;
+    private ImageView man;
     
     @FXML
     private Button btnPlay, btnChangeNameDone, btnArena, btnArenaDone;
@@ -137,8 +124,6 @@ public class HomeController implements Initializable, ControlledScene {
     @FXML
     private ProgressBar progressBar;
     
-    @FXML
-    private ProgressBar progressBar;
     
 
 	@Override
@@ -235,17 +220,7 @@ public class HomeController implements Initializable, ControlledScene {
             btnPlay.setVisible(false);
             btnArena.setVisible(false);
             btnSetting.setVisible(false);
-<<<<<<< HEAD
-            btnPause.setVisible(true);  
-            
-//            Date date = new Date();
-//            date.setSeconds(10);
-//            lblScore.setText("Score:"+date.getSeconds());
-                                    
-            progressBar.setFocusTraversable(true);
-            
-            mountain1 = new TranslateTransition(Duration.millis(10000),imgMountain1);
-=======
+
             btnPause.setVisible(true);   
             
             ProgressBar progressBar = new ProgressBar();
@@ -254,10 +229,7 @@ public class HomeController implements Initializable, ControlledScene {
             progressBar.progressProperty().bind(task.progressProperty());
             new Thread(task).start();
             
-
-    	   
     	    mountain1 = new TranslateTransition(Duration.millis(20000),imgMountain1);
->>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
 			mountain1.setToX(-1*BACKGROUND_WIDTH);
             mountain1.setFromX(0);
 			mountain1.setInterpolator(Interpolator.LINEAR);
@@ -315,30 +287,7 @@ public class HomeController implements Initializable, ControlledScene {
 			parallelTransition = new ParallelTransition(mountain1,pipePT1,mountain2,tower1,tower2,tower3,tower4);
 			parallelTransition.setCycleCount(Animation.INDEFINITE);
             parallelTransition.setInterpolator(Interpolator.LINEAR);
-<<<<<<< HEAD
-            
-        	rootPane.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
-    			@Override
-    			public void handle(KeyEvent event) {
-    				if(event.getCode() == KeyCode.A) {
-    					man.setLayoutY(man.getLayoutY() - 50);
-    				}
-    			}
-    		});
-        	
-        	rootPane.setOnKeyReleased(new EventHandler<KeyEvent>() {
-
-    			@Override
-    			public void handle(KeyEvent event) {
-    				if (event.getCode() == KeyCode.A) {
-    					man.setLayoutY(228);
-    				}
-    			}
-    		});
-                  
-=======
->>>>>>> 0d6cdc349e52f6d057b5e3aad32b25cf0ecdfc8c
 			parallelTransition.play();
 			
 		
@@ -416,10 +365,21 @@ public class HomeController implements Initializable, ControlledScene {
 	@Override
 	public void makeDecision(String output) {
 		output = output.trim();
-		if (output.contains(output)) {
+		if (output.contains("up")) {
 			
+			man.setLayoutY(man.getLayoutY() -20);
 			System.out.println("form the homeController:"+output);			
+		}else if(output.contains(null)) {
+			man.setLayoutY(man_inital_pos);
 		}
 	}
+
+	@Override
+	public void detectCollision() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 
 }
