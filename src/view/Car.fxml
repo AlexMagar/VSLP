@@ -15,17 +15,17 @@
                   <Image url="@../image/sky.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgCloud1" fitHeight="81.0" fitWidth="118.0" layoutX="8.0" layoutY="179.0" pickOnBounds="true">
+            <ImageView fx:id="imgCloud1" fitHeight="81.0" fitWidth="118.0" layoutX="8.0" layoutY="179.0" opacity="0.7" pickOnBounds="true">
                <image>
                   <Image url="@../image/cloud1.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgCloud2" fitHeight="81.0" fitWidth="138.0" layoutX="315.0" layoutY="191.0" pickOnBounds="true">
+            <ImageView fx:id="imgCloud2" fitHeight="81.0" fitWidth="138.0" layoutX="315.0" layoutY="191.0" opacity="0.7" pickOnBounds="true">
                <image>
                   <Image url="@../image/cloud2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgCloud3" fitHeight="100.0" fitWidth="150.0" layoutX="579.0" layoutY="182.0" pickOnBounds="true">
+            <ImageView fx:id="imgCloud3" fitHeight="100.0" fitWidth="150.0" layoutX="579.0" layoutY="182.0" opacity="0.7" pickOnBounds="true">
                <image>
                   <Image url="@../image/cloud3.png" />
                </image>
@@ -65,18 +65,18 @@
                   <Image url="@../image/tree3.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="obstracle" fitHeight="80.0" fitWidth="100.0" layoutX="375.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgCar2" fitHeight="80.0" fitWidth="100.0" layoutX="375.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/car3.png" />
             </image>
             </ImageView>
             <Button fx:id="goNext" layoutX="400.0" layoutY="27.0" mnemonicParsing="false" onAction="#goNextStage" text="Next" />
-            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="238.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgCar1" fitHeight="80.0" fitWidth="100.0" layoutX="238.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/car1.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="505.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgCar3" fitHeight="80.0" fitWidth="100.0" layoutX="505.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/car2.png" />
                </image>

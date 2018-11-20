@@ -31,59 +31,14 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	private Pane car_Pane;
 	        
 	@FXML 
-	private ImageView imgSky;
-	
+	private ImageView imgSky,imgCloud1,imgCloud2,imgCloud3,imgRBuilding,imgLBuilding,imgCar,imgRoad;
+
 	@FXML
-	private ImageView imgCloud1;
-	
+	private ImageView imgTree1,imgTree2,imgTree3,imgCar1,imgCar2,imgCar3;
+
 	@FXML
-	private ImageView imgCloud2;
-	
-	@FXML 
-	private ImageView imgCloud3;
-	
-	@FXML
-	private ImageView imgCloud11;
-	
-	@FXML
-	private ImageView imgCloud21;
-	
-	@FXML 
-	private ImageView imgCloud31;
-	
-	@FXML
-	private ImageView imgRBuilding;
-	
-	@FXML
-	private ImageView imgLBuilding;
-	
-	@FXML
-	private ImageView imgCar;
-	
-	@FXML
-	private ImageView imgRoad;
-	
-	@FXML
-	private ImageView imgTree1;
-	
-	@FXML
-	private ImageView imgTree2;
-	
-	@FXML 
-	private ImageView imgTree3;
-	
-	@FXML
-	private ImageView obstracle;
-	
-	@FXML
-	private Button btnPlay;
-	
-	@FXML
-	private Button goNext;
-	
-	@FXML
-	private Button btnPause;
-	
+	private Button btnPlay,goNext,btnPause;
+
 	private final static int MAX_Y = 350, MIN_Y = 140, MIN_X = 300, MAX_X =500;
 	private final static int SMALL_START_SIZE = 80;
 	boolean collisionDetect = false;
@@ -197,18 +152,18 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	    	int xdiff = MAX_X - MIN_X;
 	    	int newX = (int)Math.floor(Math.random() * xdiff) + MIN_X;
 	    	
-	    	double currentY = obstracle.getLayoutY();
+	    	double currentY = imgCar1.getLayoutY();
 	    	if(currentY < MAX_Y) {
 	    		currentY = currentY + 0.9;
-	    		obstracle.setLayoutY(currentY);
-	    		obstracle.setFitHeight(SMALL_START_SIZE * (currentY * 0.01));
-	    		obstracle.setFitWidth(SMALL_START_SIZE * (currentY * 0.01));
-	    		obstracle.setLayoutX(obstracle.getLayoutX() - 1.5);
+	    		imgCar1.setLayoutY(currentY);
+	    		imgCar1.setFitHeight(SMALL_START_SIZE * (currentY * 0.01));
+	    		imgCar1.setFitWidth(SMALL_START_SIZE * (currentY * 0.01));
+	    		imgCar1.setLayoutX(imgCar1.getLayoutX() - 1.5);
 	    	}else {
-	    		obstracle.setLayoutX(newX);
-	    		obstracle.setLayoutY(MIN_Y);
-	    		obstracle.setFitHeight(SMALL_START_SIZE);
-	    		obstracle.setFitWidth(SMALL_START_SIZE);
+	    		imgCar1.setLayoutX(newX);
+	    		imgCar1.setLayoutY(MIN_Y);
+	    		imgCar1.setFitHeight(SMALL_START_SIZE);
+	    		imgCar1.setFitWidth(SMALL_START_SIZE);
 	    		
 	    	}
 	    	
@@ -216,7 +171,7 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 	    
 	    public void detectCollide() {
 	    	
-	    	if(obstracle.getBoundsInParent().intersects(imgCar.getLayoutX() + 10, imgCar.getLayoutY() + 10, imgCar.getFitWidth() -10, imgCar.getFitWidth()-10)) {
+	    	if(imgCar1.getBoundsInParent().intersects(imgCar.getLayoutX() + 10, imgCar.getLayoutY() + 10, imgCar.getFitWidth() -10, imgCar.getFitWidth()-10)) {
 	    		System.out.println("accident occur");
 	    	}
 	    }
@@ -230,7 +185,9 @@ public class CarController implements Initializable, ControlledScene, EventHandl
 
 		public int setRandLayoutX(){
 	        Random r = new Random();
-			int x = r.nextInt(500)+1;
+	        int low = 100;
+	        int high = 300;
+			int x = r.nextInt(high - low)+low;
 	    //    System.out.println("controller.CarController.setRandLayoutX()"+x);
 	        return x;
 	    }

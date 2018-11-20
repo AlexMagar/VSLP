@@ -51,83 +51,26 @@ public class HomeController implements Initializable, ControlledScene {
     private Pane rootPane;
     
     @FXML 
-    private Button btnProfile;
+    private Button btnProfile,btnPause,btnResume;
     
+    @FXML
+    private ImageView imgMountain1,imgMountain2,imgTower1,imgTower2,imgTower3,imgTower4;
+	
+    @FXML
+    private ImageView imgpipe1,imgpipe2,imgbird,imgbush,man;
+ 
     @FXML 
-    public Button btnPause;
-   
-    @FXML 
-    public Button btnResume;
-    
+    private Button btnProfileDone,btnSetting,btnExit,btnCar,btnSettingDone,btnChangeName,btnPlay;
+  
     @FXML
-    private ImageView imgMountain1;
-	
-    @FXML
-    private ImageView imgMountain2;
-	
-    @FXML
-    private ImageView imgTower1;
-	
-    @FXML
-    private ImageView imgTower2;
-        
-    @FXML
-    private ImageView imgTower3;
-	
-    @FXML
-    private ImageView imgTower4;
-    
-    @FXML
-    private ImageView imgpipe1;
-    
-    @FXML
-    private ImageView imgpipe2;
-    
-    @FXML
-    private ImageView imgbird;
-    
-    @FXML
-    private ImageView imgbush;
-    
-    @FXML 
-    private Button btnProfileDone;
-    
-    @FXML
-    private Button btnSetting;
-    
-    @FXML
-    private Button btnExit;
-    
-    @FXML
-    private Button btnCar;
-    
-    @FXML
-    private Button btnSettingDone;
-    
-    @FXML
-    private Button btnChangeName;
-    
-    @FXML
-    private Button btnPlay;
-    
-    @FXML
-    private Button btnChangeNameDone;
-    
-    @FXML
-    private Button btnArena;
-    
-    @FXML
-    private Button btnArenaDone;
+    private Button btnChangeNameDone,btnArena,btnArenaDone;
     
     @FXML
     private TextField txtPlayerName;
     
     @FXML
     private Label lblStatus;
-    
-    @FXML
-    private ImageView man;
-    
+
     @FXML
     private ProgressBar progressBar;
     
